@@ -1,0 +1,4 @@
+@mixin neon-text($color) {
+  text-shadow: 0 0 5px $color, 0 0 10px $color, 0 0 20px $color, 0 0 40px $color,
+    0 0 80px $color, 0 0 90px $color, 0 0 100px $color, 0 0 150px $color;
+}

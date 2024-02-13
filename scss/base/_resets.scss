@@ -1,0 +1,49 @@
+body {
+  background-color: $background-color;
+  font-family: $retro-font;
+  color: $neon-blue;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+
+  .main-button {
+    background-image: linear-gradient(45deg, $neon-blue, $neon-pink);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-image: linear-gradient(45deg, $neon-pink, $neon-blue);
+    }
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @include neon-text($neon-pink);
+  }
+  a {
+    color: $neon-blue;
+    text-decoration: none;
+    @include neon-text($neon-blue);
+
+    transition: all 300ms ease;
+
+    &:hover {
+      color: $neon-pink;
+      @include neon-text($neon-pink);
+    }
+  }
+}

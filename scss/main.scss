@@ -1,0 +1,24 @@
+// UTILITIES & BASE
+
+@import "utilities/mixins";
+@import "utilities/variables";
+@import "base/resets";
+@import "utilities/helpers";
+
+// LAYOUT
+
+@import "layout/footer";
+@import "layout/header";
+@import "layout/background";
+
+// PAGES
+
+@import "pages/memory-game";
+@import "pages/quiz-game";
+@import "pages/snake-game";
+@import "pages/tic-tac-toe";
+@import "pages/home";
+
+// MEDIA QUERIES
+
+@import "layout/media-queries";

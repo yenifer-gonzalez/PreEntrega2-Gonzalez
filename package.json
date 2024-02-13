@@ -1,0 +1,24 @@
+{
+  "name": "game-grove",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/main.scss css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yenifer-gonzalez/PreEntrega1-Gonzalez.git"
+  },
+  "author": "Yenifer Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yenifer-gonzalez/PreEntrega1-Gonzalez/issues"
+  },
+  "homepage": "https://github.com/yenifer-gonzalez/PreEntrega1-Gonzalez#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.0.3"
+  }
+}
