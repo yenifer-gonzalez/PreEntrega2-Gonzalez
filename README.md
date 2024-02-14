@@ -25,4 +25,4 @@
 - Responder preguntas: Se mostrará una pregunta con múltiples opciones. Debes ingresar el número correspondiente a tu respuesta.
 - Puntuación: Al final de cada pregunta, se te informará si tu respuesta es correcta o incorrecta. Los puntos se suman automáticamente basados en la dificultad de cada pregunta.
 
-Link a GitHub Pages para ver la página en vivo 👉🏻 [Simulador Game Grove](https://yenifer-gonzalez.github.io/PreEntrega1-Gonzalez/)
+Link a GitHub Pages para ver la página en vivo 👉🏻 [Simulador Game Grove](https://yenifer-gonzalez.github.io/PreEntrega2-Gonzalez/)
