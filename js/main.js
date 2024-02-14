@@ -1,29 +1,35 @@
-import memoryGame from "./memoryGame.js";
-import quizGame from "./quizGame.js";
-import ticTacToe from "./ticTacToe.js";
+import playMemory from "./memoryGame.js";
+import playQuiz from "./quizGame.js";
 
-let currentGame = "";
-const games = ["memoryGame", "quizGame", "snakeGame", "ticTacToe"];
+function snakeGame() {
+  alert("El juego de la serpiente aún no está disponible.");
+}
+
+function ticTacToe() {
+  alert("Tic Tac Toe aún no está disponible.");
+}
 
 function chooseGame() {
-  let choice = parseInt(
-    prompt(
-      "Elige una opción: 1. Juego de Memoria, 2. Quiz, 3. Juego de la Serpiente, 4. Tic Tac Toe:"
-    )
+  let choice = prompt(
+    "Elige una opción: 1. Juego de Memoria, 2. Quiz, 3. Juego de la Serpiente, 4. Tic Tac Toe:"
   );
+  choice = parseInt(choice);
 
   switch (choice) {
     case 1:
-      memoryGame();
+      playMemory();
       break;
     case 2:
-      quizGame();
+      playQuiz();
       break;
     case 3:
-      alert("Este juego aún no está disponible.");
+      snakeGame();
       break;
     case 4:
       ticTacToe();
+      break;
+    default:
+      alert("Por favor, elige una opción válida.");
   }
 }
 

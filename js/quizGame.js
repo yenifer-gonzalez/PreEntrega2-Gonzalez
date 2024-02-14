@@ -39,28 +39,35 @@ const preguntas = [
 let puntuacion = 0;
 
 function mostrarPregunta(item) {
-  let preguntas = "";
-  let correcto = true;
-
+  let preguntasTexto = "";
   item.opciones.forEach((opcion, index) => {
-    preguntas += `${index + 1}. ${opcion}\n`;
+    preguntasTexto += `${index + 1}. ${opcion}\n`;
   });
-  while (correcto) {
-    const respuesta = prompt(
-      `${item.pregunta}\n\n${preguntas}\nIntroduce el número de tu respuesta:`
-    );
-    if (respuesta > 0 && respuesta < 5) {
-      return item.opciones[respuesta - 1];
-    } else {
-      alert("Por favor, seleccione un número entre 1 y 4.");
-      correcto = true;
-    }
+  preguntasTexto += "0. Salir del juego";
+
+  const respuestaUsuario = prompt(
+    `${item.pregunta}\n\n${preguntasTexto}\nIntroduce el número de tu respuesta:`
+  );
+
+  if (respuestaUsuario === "0") {
+    return "salir";
+  }
+
+  if (respuestaUsuario > 0 && respuestaUsuario <= item.opciones.length) {
+    return item.opciones[respuestaUsuario - 1];
+  } else {
+    alert("Por favor, seleccione un número entre 1 y 4, o 0 para salir.");
+    return mostrarPregunta(item);
   }
 }
 
-function jugar() {
-  preguntas.forEach((item) => {
+function play() {
+  for (let item of preguntas) {
     let respuesta = mostrarPregunta(item);
+    if (respuesta === "salir") {
+      alert("Has elegido salir del juego.");
+      return;
+    }
     if (respuesta.toLowerCase() === item.respuesta.toLowerCase()) {
       alert("¡Correcto!");
       switch (item.dificultad) {
@@ -76,8 +83,7 @@ function jugar() {
     } else {
       alert(`Incorrecto. La respuesta correcta era: ${item.respuesta}`);
     }
-  });
-
+  }
   alert(
     `Juego terminado. Tu puntuación es: ${puntuacion} de ${
       preguntas.length * 2
@@ -85,11 +91,11 @@ function jugar() {
   );
 }
 
-export default function iniciarJuego() {
+export default function playQuiz() {
   while (true) {
-    let jugarDeNuevo = prompt("¿Querés jugar al Quiz Game? (si/no)");
+    let jugarDeNuevo = prompt("¿Quieres jugar al Quiz Game? (si/no)");
     if (jugarDeNuevo?.toLowerCase() === "si") {
-      jugar();
+      play();
       puntuacion = 0;
     } else if (jugarDeNuevo?.toLowerCase() === "no") {
       alert("Gracias por jugar.");
